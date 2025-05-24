@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimización Energética de un Brazo Robot</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      margin: 0;
+      background: linear-gradient(to right, #e0f7fa, #e8f5e9);
+      color: #333;
+      animation: fadeIn 1s ease-in;
+    }
+    header {
+      background: linear-gradient(to right, #26a69a, #66bb6a);
+      color: white;
+      padding: 1em;
+      text-align: center;
+      animation: slideDown 1s ease-out;
+    }
+    nav {
+      background: #00796b;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav div {
+      position: relative;
+    }
+    nav a {
+      display: inline-block;
+      padding: 1em;
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    nav a:hover {
+      background: #004d40;
+    }
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #004d40;
+      flex-direction: column;
+      z-index: 10;
+    }
+    nav div:hover .submenu {
+      display: flex;
+    }
+    .submenu a {
+      padding: 0.5em 1em;
+    }
+    main {
+      padding: 2em;
+      animation: fadeIn 1.5s ease-in;
+    }
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
+    .carousel iframe {
+      width: 300px;
+      height: 200px;
+      margin-right: 1em;
+      scroll-snap-align: start;
+    }
+    footer {
+      background: #004d40;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes slideDown {
+      from {transform: translateY(-100%); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Optimización Energética de un Brazo Robot</h1>
+    <p>Por medio de derivadas e integrales</p>
+  </header>
+  <nav>
+    <div>
+      <a href="#">Contextualización Teórica</a>
+      <div class="submenu">
+        <a href="marco-conceptual.html">Marco Conceptual</a>
+        <a href="fundamentos-teoricos.html">Fundamentos Teóricos</a>
+        <a href="importancia-ingenieria.html">Importancia en la Ingeniería</a>
+      </div>
+    </div>
+    <div>
+      <a href="#">Demostración del Problema Genérico</a>
+      <div class="submenu">
+        <a href="ejemplo-basico.html">Ejemplo Básico</a>
+        <a href="consideraciones.html">Consideraciones Principales</a>
+        <a href="visualizacion.html">Visualización de un Problema</a>
+      </div>
+    </div>
+    <div>
+      <a href="#">Planteamiento del Caso de Estudio</a>
+      <div class="submenu">
+        <a href="descripcion.html">Descripción del Caso</a>
+        <a href="variables.html">Variables Involucradas</a>
+        <a href="restricciones.html">Restricciones y Condiciones</a>
+      </div>
+    </div>
+    <div>
+      <a href="#">Solución del Caso de Estudio</a>
+      <div class="submenu">
+        <a href="video-explicativo.html">Video Explicativo</a>
+        <a href="resolucion-resultados.html">Proceso de Resolución y Resultados</a>
+      </div>
+    </div>
+    <div>
+      <a href="#">Elementos Requeridos</a>
+      <div class="submenu">
+        <a href="infografias.html">Infografía para Cada Estudio de Caso</a>
+        <a href="algoritmo-python.html">Algoritmo Personalizado para Cada Caso</a>
+        <a href="tabla-comparativa.html">Tabla Comparativa con Otros Métodos</a>
+        <a href="bibliografia.html">Bibliografía Actualizada</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <h2>Bienvenidos al Blog de Ingeniería Industrial</h2>
+    <p>Explora los temas desde una perspectiva técnica, educativa e interactiva.</p>
+  </main>
+  <footer>
+    <h3>Integrantes del Grupo</h3>
+    <p>Nombre 1 | Nombre 2 | Nombre 3 | Nombre 4</p>
+  </footer>
+</body>
+</html>
