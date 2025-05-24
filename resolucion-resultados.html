@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proceso de Resolución y Resultados</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      padding: 2em;
+      color: #333;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2, h3 {
+      color: #00796b;
+      text-align: center;
+    }
+
+    textarea {
+      width: 100%;
+      height: 250px;
+      font-family: Consolas, monospace;
+      font-size: 1em;
+      background-color: #263238;
+      color: #f8f8f2;
+      border: none;
+      padding: 1em;
+      margin: 1em 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      resize: vertical;
+    }
+
+    section {
+      margin-bottom: 3em;
+    }
+
+    p {
+      max-width: 800px;
+      margin: 0.5em auto;
+      font-size: 1.1em;
+      line-height: 1.6em;
+    }
+
+    ul {
+      max-width: 800px;
+      margin: 1em auto;
+      padding-left: 1.5em;
+    }
+
+    li {
+      margin-bottom: 0.5em;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #c62828;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Proceso de Resolución y Resultados</h2>
+
+  <section>
+    <h3>Algoritmo: Integración Simpson 1/3
+</h3>
+    <textarea readonly>
+# Algoritmo final para calcular la energía total consumida en un ciclo usando Simpson 1/3 (con n=4)
+
+# Paso 1: Datos del sensor IoT - Potencia registrada cada 2.5 s
+tiempos = [0, 2.5, 5.0, 7.5, 10.0]  # en segundos
+potencias = [10.0, 20.5, 22.0, 20.5, 10.0]  # en kW
+
+# Paso 2: Verificar número de intervalos
+n = len(tiempos) - 1
+if n % 2 != 0:
+    raise ValueError("Simpson 1/3 requiere un número par de intervalos.")
+
+# Paso 3: Calcular ancho de subintervalo
+h = (tiempos[-1] - tiempos[0]) / n  # h = 2.5 segundos
+
+# Paso 4: Aplicar fórmula de Simpson 1/3
+S = potencias[0] + potencias[-1]  # extremos
+for i in range(1, n):
+    coef = 4 if i % 2 != 0 else 2
+    S += coef * potencias[i]
+
+energia_total = (h / 3) * S  # Resultado en kJ
+
+# Paso 5: Mostrar resultado final
+print(f"Energía total consumida por el cobot en 10 segundos: {energia_total:.2f} kJ")
+    </textarea>
+  </section>
+
+  <section>
+    <h3>> Python: Derivadas Finitas</h3>
+    <textarea readonly>
+# Algoritmo para estimar la potencia instantánea de un cobot usando diferencias centradas
+
+# Paso 1: Definir los datos medidos por el sensor IoT
+E_antes = 326.00  # Energía en kJ en t = 4.5 s
+E_despues = 329.89  # Energía en kJ en t = 5.5 s
+h = 0.5  # Intervalo de tiempo en segundos
+
+# Paso 2: Calcular la derivada (dE/dt), que representa la potencia instantánea en kW
+potencia_instantanea = (E_despues - E_antes) / (2 * h)
+
+# Paso 3: Mostrar el resultado
+print(f"Potencia instantánea en t=5s: {potencia_instantanea:.2f} kW")
+
+# Paso 4: Evaluar si se supera el umbral de alerta
+umbral = 3  # kW/s
+
+if potencia_instantanea > umbral:
+    print(" Consumo elevado detectado: activar protocolo de ahorro energético.")
+else:
+    print(" Consumo dentro del rango normal.")
+    </textarea>
+  </section>
+
+  <section>
+    <h3>Umbral Crítico y Acciones de Control</h3>
+    <p><strong>Objetivo:</strong> Usar <code>dE/dt</code> para activar protocolos de ahorro energético.</p>
+
+    <p><strong>Datos de Partida:</strong></p>
+    <ul>
+      <li>Umbral crítico: <span class="highlight">dE/dt &gt; 3 kW/s</span></li>
+      <li>Origen: Basado en pruebas de sobrecalentamiento del cobot.</li>
+    </ul>
+
+    <p><strong>Paso a Paso:</strong></p>
+    <ul>
+      <li>Comparación: En <strong>t = 5 s</strong>, <code>dE/dt ≈ 3.89 kW/s</code> (del Problema 1).</li>
+      <li>Como <strong>3.89 &gt; 3</strong>, se activan acciones correctivas.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

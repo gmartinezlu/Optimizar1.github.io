@@ -1,0 +1,78 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marco Conceptual</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #e8f5e9);
+      margin: 0;
+      padding: 2em;
+      color: #333;
+    }
+    header {
+      background-color: #26a69a;
+      color: white;
+      padding: 1em;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+      animation: slideIn 1s ease-out;
+    }
+    main {
+      background: white;
+      border-radius: 20px;
+      padding: 2em;
+      margin-top: 1em;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1.2s ease-in;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<div class="subventana" id="fundamentos-teoricos">
+  <h2>Fundamentos Teóricos</h2>
+  
+  <p>Para analizar y optimizar el consumo energético de un sistema como un brazo robótico, se requiere el uso de herramientas del cálculo diferencial e integral. En este caso, se utilizan:</p>
+  
+  <h3>1. Derivadas Finitas</h3>
+  <p>Permiten estimar tasas de cambio (como la potencia instantánea) a partir de valores en puntos discretos. Son esenciales cuando no se tiene una función explícita o cuando se trabaja con datos experimentales (por ejemplo, lecturas de sensores, señales digitales o simulaciones computacionales).</p>
+  
+  <p>Estas aproximaciones utilizan diferencias entre puntos consecutivos de la función:</p>
+  
+  <ul>
+    <li><strong>Diferencias hacia adelante (progresiva):</strong> útil cuando se tienen datos a partir de un punto inicial.</li>
+    <li><strong>Diferencias hacia atrás (regresiva):</strong> útil cuando se tiene información histórica.</li>
+    <li><strong>Diferencias centradas:</strong> más precisa, ya que utiliza información a ambos lados del punto de interés.</li>
+  </ul>
+  
+  <p><strong>Ejemplo de fórmula centrada:</strong></p>
+  <img src="diferencia_adelantada.png" alt="Fórmula de diferencia centrada" width="300">
+
+  <h3>2. Integración Numérica</h3>
+  <p>Se usa para calcular cantidades acumuladas (como la energía total consumida) cuando no se dispone de una expresión exacta de la función. Métodos comunes incluyen:</p>
+  
+  <ul>
+    <li><strong>Regla del trapecio:</strong> aproxima el área bajo la curva usando trapecios.</li>
+    <li><strong>Regla de Simpson 1/3:</strong> usa parábolas para mayor precisión en funciones suaves.</li>
+  </ul>
+
+  <p>Estas herramientas permiten evaluar el comportamiento del sistema en tiempo real y tomar decisiones para su optimización.</p>
+</div>
+

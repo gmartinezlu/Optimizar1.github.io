@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Video Explicativo - Solución del Caso de Estudio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      padding: 2em;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #00796b;
+      text-align: center;
+    }
+    video {
+      display: block;
+      margin: 1em auto;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    img {
+      display: block;
+      margin: 1em auto;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+    section {
+      margin-bottom: 3em;
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.5em;
+      max-width: 700px;
+      margin: 0.5em auto 1em;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Video Explicativo - Solución del Caso de Estudio</h2>
+
+  <section>
+    <video controls>
+      <source src="videos/video1.mp4" type="video/mp4" />
+      Tu navegador no soporta la etiqueta de video.
+    </video>
+    <img src="imagenes/imagen1.png" alt="Ilustración del método matemático 1" />
+    <h3>Métodos Matemáticos</h3>
+    <h4>Derivadas Finitas</h4>
+    <p>Se necesita estimar la potencia instantánea (dE/dt) en t=5 segundos para detectar picos de consumo.</p>
+    <p>Fórmula de diferencia centrada:</p>
+    <img src="imagenes/imagen2.png" alt="Fórmula de diferencia centrada" />
+    <p>Método: Usar diferencias centradas (h=0.5).</p>
+    <p>Datos del sensor IoT:</p>
+    <img src="imagenes/imagen3.png" alt="Datos del sensor IoT" />
+    <p>Interpretación: El cobot está aumentando su consumo energético a una tasa de 3.89 kW por segundo en t=5 s.</p>
+  </section>
+
+  <section>
+    <video controls>
+      <source src="videos/video2.mp4" type="video/mp4" />
+      Tu navegador no soporta la etiqueta de video.
+    </video>
+    <img src="imagenes/imagen4.png" alt="Ilustración del método matemático 2" />
+    <h4>Métodos Matemáticos: Integración Numérica (Simpson 1/3)</h4>
+    <p>Para cuantificar la eficiencia, el CESAR quiere calcular la energía total consumida en un ciclo usando Simpson 1/3 (con n=4).</p>
+    <p>Puntos de evaluación: t=0, 2.5, 5, 7.5, 10.</p>
+    <img src="imagenes/imagen5.png" alt="Puntos de evaluación para integración numérica" />
+    <p>Cálculo:</p>
+    <p>Datos de Partida: Función E(t)</p>
+    <p>Puntos de evaluación: t = 0, 2.5, 5, 7.5, 10 segundos (con n=4 intervalos, h=2.5).</p>
+    <img src="imagenes/imagen6.png" alt="Cálculo paso 1" />
+    <img src="imagenes/imagen7.png" alt="Cálculo paso 2" />
+    <img src="imagenes/imagen8.png" alt="Cálculo paso 3" />
+    <p>Interpretación: El cobot consume ≈190 kJ (kilojulios) de energía en 10 segundos.</p>
+  </section>
+
+</body>
+</html>
+  

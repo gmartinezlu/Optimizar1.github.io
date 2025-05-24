@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restricciones y Condiciones</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f1f8e9, #e0f2f1);
+      margin: 0;
+      padding: 2em;
+      color: #333;
+    }
+    header {
+      background-color: #43a047;
+      color: white;
+      padding: 1em;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+    }
+    main {
+      background: white;
+      border-radius: 20px;
+      padding: 2em;
+      margin-top: 1em;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #2e7d32;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5em;
+      margin-bottom: 1.5em;
+    }
+    strong {
+      color: #1b5e20;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Restricciones y Condiciones</h1>
+  </header>
+  <main>
+    <h2>Restricciones Técnicas:</h2>
+    <ul>
+      <li>Los datos de potencia son discretos (no continuos), lo que limita el uso de métodos analíticos exactos.</li>
+      <li>El cobot no puede detenerse abruptamente; las acciones correctivas deben ser compatibles con la operación en tiempo real.</li>
+    </ul>
+
+    <h2>Condiciones de Borde:</h2>
+    <ul>
+      <li><strong>Consumo inicial (t = 0):</strong> Conocido (ej: 0 kW).</li>
+      <li><strong>Consumo final (t = 10 s):</strong> Medido por el sensor IoT.</li>
+    </ul>
+
+    <h2>Supuestos:</h2>
+    <ul>
+      <li>La función de energía <strong>E(t)</strong> es suave entre puntos muestreados (para validar el uso de diferencias finitas e integración numérica).</li>
+      <li>El umbral crítico (<strong>3 kW/s</strong>) fue determinado experimentalmente como punto de riesgo de sobrecalentamiento.</li>
+    </ul>
+  </main>
+</body>
+</html>

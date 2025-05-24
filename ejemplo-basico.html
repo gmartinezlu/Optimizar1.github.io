@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ejemplo Básico - Optimización Energética</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #e8f5e9);
+      margin: 0;
+      padding: 2em;
+      color: #333;
+      animation: fadeIn 1s ease-in;
+    }
+    header {
+      background-color: #00796b;
+      color: white;
+      padding: 1.5em 1em;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+      animation: slideDown 1s ease-out;
+    }
+    main {
+      background: white;
+      border-radius: 20px;
+      padding: 2em;
+      margin-top: 1em;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeIn 1.2s ease-in;
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+    h1, h2 {
+      color: #004d40;
+    }
+    img {
+      display: block;
+      margin: 1em auto;
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+    p {
+      margin-bottom: 1.2em;
+    }
+    ul {
+      margin-left: 1.5em;
+      list-style-type: disc;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ejemplo Básico</h1>
+  </header>
+  <main>
+    <h2>Optimización del consumo de combustible en un automóvil</h2>
+    <p><strong>Contexto del caso (vida cotidiana):</strong></p>
+    <p>
+      Un estudiante universitario desea optimizar su ruta diaria hacia la universidad para minimizar el consumo de combustible.
+      Él ha instalado un dispositivo que registra su velocidad cada 10 segundos durante todo el trayecto, y desea calcular dos cosas:
+    </p>
+    <ul>
+      <li>La distancia total recorrida durante el trayecto.</li>
+      <li>El punto en el cual el consumo de combustible fue más alto, que depende directamente de la aceleración (segunda derivada de la posición o primera derivada de la velocidad).</li>
+    </ul>
+
+    <h3>Método de resolución con derivadas finitas e integración numérica</h3>
+    <p><strong>Datos disponibles:</strong></p>
+    <ul>
+      <li>El automóvil mide su velocidad \( v(t) \) cada 10 segundos.</li>
+      <li>Tiempo total del trayecto: 100 segundos.</li>
+      <li>Velocidades registradas (en m/s): [0, 5, 12, 20, 22, 20, 18, 15, 10, 5, 0]</li>
+    </ul>
+
+    <h3>Parte 1: Integración numérica (Regla del trapecio)</h3>
+    <p><strong>Objetivo:</strong> Estimar la distancia total recorrida.</p>
+    <img src="img/distancia-total.png" alt="Gráfico integración - distancia total" />
+    <p><strong>Datos:</strong></p>
+    <img src="img/datos-integracion.png" alt="Tabla de datos - integración" />
+    <p><strong>Paso a paso:</strong></p>
+    <img src="img/paso-a-paso-trapecio.png" alt="Cálculos paso a paso - regla del trapecio" />
+
+    <h3>Parte 2: Derivadas finitas</h3>
+    <p><strong>Objetivo:</strong> Calcular la aceleración para identificar picos de consumo.</p>
+    <p><strong>Identificación del punto de mayor aceleración:</strong></p>
+    <img src="img/aceleracion-maxima.png" alt="Gráfico de aceleración" />
+    <p>
+      Repitiendo esto para cada punto, encontramos el valor máximo de aceleración (positivo o negativo) y el tiempo correspondiente.
+      Ese será el pico de consumo de combustible, pues una mayor aceleración requiere más energía.
+    </p>
+
+    <h3>Conclusiones del estudio de caso:</h3>
+    <ul>
+      <li>La distancia total recorrida es de aproximadamente 635 metros.</li>
+      <li>El punto de mayor consumo de combustible ocurrió donde la aceleración fue máxima, según la derivada finita.</li>
+      <li>Este enfoque permitió al estudiante comprender cómo optimizar su manejo (por ejemplo, evitar aceleraciones bruscas).</li>
+    </ul>
+  </main>
+</body>
+</html>
